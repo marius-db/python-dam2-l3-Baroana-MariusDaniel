@@ -338,6 +338,7 @@ def menu_principal():
                 print("Sin repeticiones:", res['sin_repeticiones'])
                 print("Corregido:", res['corregido'])
                 logger.log("Normalizador", texto, res)
+                
 
         elif opcion == '2':
             fechas = encontrar_fechas(texto)
