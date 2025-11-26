@@ -1,0 +1,303 @@
+================================================================================
+  SESIÓN wordChef - 2025-11-26 17:33:40
+================================================================================
+
+[17:34:58] Normalizador
+--------------------------------------------------------------------------------
+Entrada: gsbhdtrnfyjtkuymil
+
+  original:
+    gsbhdtrnfyjtkuymil
+  lematizado:
+    gsbhdtrnfyjtkuymil
+  sin_repeticiones:
+    gsbhdtrnfyjtkuymil
+  corregido:
+    gsbhdtrnfyjtkuymil
+
+================================================================================
+
+[17:35:00] Patrones
+--------------------------------------------------------------------------------
+Entrada: gsbhdtrnfyjtkuymil
+
+  Fechas:
+  Dinero:
+  Correos:
+
+================================================================================
+
+[17:35:02] Resumen
+--------------------------------------------------------------------------------
+Entrada: gsbhdtrnfyjtkuymil
+
+  Resumen:
+    gsbhdtrnfyjtkuymil
+
+================================================================================
+
+[17:35:03] NER
+--------------------------------------------------------------------------------
+Entrada: gsbhdtrnfyjtkuymil
+
+  Personas:
+  Lugares:
+    • gsbhdtrnfyjtkuymil
+  Empresas:
+  Fechas:
+  Cantidades:
+
+================================================================================
+
+[17:35:03] Palabras clave
+--------------------------------------------------------------------------------
+Entrada: gsbhdtrnfyjtkuymil
+
+  top_5_palabras:
+    • ('gsbhdtrnfyjtkuymil', 1)
+  sustantivos:
+  verbos:
+
+================================================================================
+
+[17:35:04] Sentimiento
+--------------------------------------------------------------------------------
+Entrada: gsbhdtrnfyjtkuymil
+
+  Sentimiento:
+    Neutral
+  Confianza:
+    0.24285081028938293
+  Etiqueta:
+    3 stars
+
+================================================================================
+
+[17:35:10] Normalizador
+--------------------------------------------------------------------------------
+Entrada: keyword_extraction.py:
+
+-- 1
+i need you to make me a code file that does the following:
+Keyword Extr...
+
+  original:
+    keyword_extraction.py:
+
+-- 1
+i need you to make me a code file that does the following:
+Keyword Extraction – spaCy + NLTK
+For example:
+Top 5 most frequent words (NLTK)
+
+Relevant nouns (spaCy)
+
+Main verbs
+
+-- 2 
+make the code in spanish and make sure you don't use anything complicated and only the imports i told you 
+to use and make it easy to read and not too long either. also take care of possible errors and comment it 
+where you seem fit
+
+-- 3
+now take care of the errors and make sure to add comments explaining how this code works 
+everywhere you see fit so if someone asks me anything about it no matter what part it is i 
+can explain it easily
+  lematizado:
+    keyword_extraction.py : 
+
+ -- 1 
+ i need you to make yo a code file that does the following : 
+ Keyword Extraction – spacy + NLTK 
+ For example : 
+ Top 5 most frequent words ( NLTK ) 
+
+ Relevant nouns ( spaCy ) 
+
+ Main verbs 
+
+ -- 2 
+ make the codir in spanish and make sure you don't use anything complicated and only the imports i told you 
+ to use and make it easy to read and not too long either . also take care of possible errors and comment it 
+ wherar you seem fit 
+
+ -- 3 
+ now take care of the errors and make sure to add comments explaining how this code works 
+ everywherir you see fit so if someone asks yo anything about it no matter what part it is i 
+ can explain it easily
+  sin_repeticiones:
+    keyword_extraction.py: -- 1 i need you to make me a code file that does the following: Keyword Extraction – spaCy + NLTK For example: Top 5 most frequent words (NLTK) Relevant nouns (spaCy) Main verbs -- 2 make the code in spanish and make sure you don't use anything complicated and only the imports i told you to use and make it easy to read and not too long either. also take care of possible errors and comment it where you seem fit -- 3 now take care of the errors and make sure to add comments explaining how this code works everywhere you see fit so if someone asks me anything about it no matter what part it is i can explain it easily
+  corregido:
+    keyword_extraction.py : 
+
+ -- 1 
+ i need you to make me a code file that does the following : 
+ Keyword Extraction – spaCy + NLTK 
+ For example : 
+ Top 5 most frequent words ( NLTK ) 
+
+ Relevant nouns ( spaCy ) 
+
+ Main verbs 
+
+ -- 2 
+ make the code in spanish and make sure you don't use anything complicated and only the imports i told you 
+ to use and make it easy to read and not too long either . also take care of possible errors and comment it 
+ where you seem fit 
+
+ -- 3 
+ now take care of the errors and make sure to add comments explaining how this code works 
+ everywhere you see fit so if someone asks me anything about it no matter what part it is i 
+ can explain it easily
+
+================================================================================
+
+[17:35:11] Resumen
+--------------------------------------------------------------------------------
+Entrada: keyword_extraction.py:
+
+-- 1
+i need you to make me a code file that does the following:
+Keyword Extr...
+
+  Resumen:
+    keyword_extraction.py:
+
+-- 1
+i need you to make me a code file that does the following:
+Keyword Extraction – spaCy + NLTK
+For example:
+Top 5 most frequent words (NLTK)
+
+Relevant nouns (spaCy)
+
+Main verbs
+
+-- 2 
+make the code in spanish and make sure you don't use anything complicated and only the imports i told you 
+to use and make it easy to read and not too long either. also take care of possible errors and comment it 
+where you seem fit
+
+-- 3
+now take care of the errors and make sure to add comments explaining how this code works 
+everywhere you see fit so if someone asks me anything about it no matter what part it is i 
+can explain it easily
+
+================================================================================
+
+[17:35:12] Patrones
+--------------------------------------------------------------------------------
+Entrada: keyword_extraction.py:
+
+-- 1
+i need you to make me a code file that does the following:
+Keyword Extr...
+
+  Fechas:
+  Dinero:
+  Correos:
+
+================================================================================
+
+[17:35:13] Resumen
+--------------------------------------------------------------------------------
+Entrada: keyword_extraction.py:
+
+-- 1
+i need you to make me a code file that does the following:
+Keyword Extr...
+
+  Resumen:
+    keyword_extraction.py:
+
+-- 1
+i need you to make me a code file that does the following:
+Keyword Extraction – spaCy + NLTK
+For example:
+Top 5 most frequent words (NLTK)
+
+Relevant nouns (spaCy)
+
+Main verbs
+
+-- 2 
+make the code in spanish and make sure you don't use anything complicated and only the imports i told you 
+to use and make it easy to read and not too long either. also take care of possible errors and comment it 
+where you seem fit
+
+-- 3
+now take care of the errors and make sure to add comments explaining how this code works 
+everywhere you see fit so if someone asks me anything about it no matter what part it is i 
+can explain it easily
+
+================================================================================
+
+[17:35:20] NER
+--------------------------------------------------------------------------------
+Entrada: keyword_extraction.py:
+
+-- 1
+i need you to make me a code file that does the following:
+Keyword Extr...
+
+  Personas:
+    • Keyword Extraction
+    • Main
+    • Relevant
+    • also take
+    • long either
+  Lugares:
+  Empresas:
+    • NLTK
+    • file that does the following
+  Fechas:
+  Cantidades:
+
+================================================================================
+
+[17:35:21] Palabras clave
+--------------------------------------------------------------------------------
+Entrada: keyword_extraction.py:
+
+-- 1
+i need you to make me a code file that does the following:
+Keyword Extr...
+
+  top_5_palabras:
+    • ('and', 6)
+    • ('you', 5)
+    • ('make', 5)
+    • ('the', 4)
+    • ('code', 3)
+  sustantivos:
+    • ('fit', 2)
+    • ('code', 1)
+    • ('spanish', 1)
+    • ('anything', 1)
+    • ('seem', 1)
+  verbos:
+    • ('code', 1)
+    • ('only', 1)
+    • ('where', 1)
+    • ('everywhere', 1)
+    • ('if', 1)
+
+================================================================================
+
+[17:35:21] Sentimiento
+--------------------------------------------------------------------------------
+Entrada: keyword_extraction.py:
+
+-- 1
+i need you to make me a code file that does the following:
+Keyword Extr...
+
+  Sentimiento:
+    Positivo
+  Confianza:
+    0.3800868093967438
+  Etiqueta:
+    4 stars
+
+================================================================================
+

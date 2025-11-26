@@ -1,0 +1,10 @@
+wordCheff.py(mi parte):
+
+--1
+can you make a simple function that logs the results you get and it's like one file per 
+session running and it has a easy to read and nice to read look in the log file?
+
+--2
+now that you made this i want you to add comments explaining stuff in the new code 
+you added so a new beginner can understand and also make it so if the logs folder doesn't exist it gets 
+automatically created
