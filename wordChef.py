@@ -315,7 +315,6 @@ def encontrar_correos(texto): return re.findall(PATRON_EMAIL, texto)
         list[str]: Lista de correos electrónicos.
     """
 
-
 # ----------------------
 # Resumen simple
 # ----------------------
@@ -430,7 +429,11 @@ def extraer_palabras_clave(texto, nlp=None):
         doc = nlp(texto)
         sustantivos_relevantes = Counter([t.text for t in doc if t.pos_ == 'NOUN']).most_common(5)
         verbos_principales = Counter([t.text for t in doc if t.pos_ == 'VERB']).most_common(5)
-    return {'top_5_palabras': top_5, 'sustantivos': sustantivos_relevantes, 'verbos': verbos_principales}
+    return {
+        'top_5_palabras': top_5, 
+        'sustantivos': sustantivos_relevantes, 
+        'verbos': verbos_principales
+    }
 
 
 # ----------------------
