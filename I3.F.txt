@@ -1,0 +1,22 @@
+-- 1:
+can you analize this current code and give me 2 improvements for it? 
+and to be more specific i don't want to change anything in the code just write 
+me the ideas here in chat AND make sure the ideas are specific for each function. 
+like for example an improvement for the sessionlogger class and another one for the extraer 
+palabras function.
+
+-- 2:
+okei so i like the sessionlogger idea but for the extraer palabras function can 
+you maybe come up with some other idea? i am asking as i would like the idea to be 
+more visible and impactful for the current code as it is because i would then need to 
+make a google docs to explain the changes and why i did them
+
+-- 3:
+okei then, i now want you to take the sessionlogger idea and this new palabras clave idea and 
+implement them in the code BUT not this file, it needs to be a new file called 
+bloque_mejoras_MariusDanieBaroana.py because i need to have for my class a before and after chances 
+files ya know. also make sure alongside the docsting files and comments that explain the functions 
+and what's in them you mention what are the new 2 improvements we made
+
+-- 4:
+finally, i want you to elaborate more the docstrings in the functions
