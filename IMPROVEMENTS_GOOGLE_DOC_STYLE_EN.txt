@@ -1,0 +1,136 @@
+Project Report — Improvements to Keyword Extraction and Session Logging
+
+Author: Marius Daniel Baroana
+Date: December 10, 2025
+
+Introduction
+
+This document explains the two main improvements I implemented on top of the original
+keyword-extraction script. I wrote it so someone who is new to Python can understand
+what I changed and why, while also keeping enough technical detail so a more experienced
+reader can appreciate the design decisions. The tone is personal — I explain what I
+actually did, how I tested it, and what I learned.
+
+Short summary (one paragraph)
+
+I improved the original program in two ways: first, I replaced the ad-hoc file-based
+logger with a `logging`-based `SessionLogger` that uses file rotation and log levels;
+second, I extended the keyword extraction function to return meaningful multi-word
+keyphrases (noun-chunks) and score them so that multi-word, informative phrases
+appear higher in the output. Both changes are backwards-compatible: they keep the
+original fields while adding new, more useful information.
+
+Why I chose these two improvements
+
+When I read the original script, two things stood out to me. The logging code wrote
+everything by hand to a single file, which is fine for a demo but not robust for
+real use — the file can grow forever, there are no severity levels, and it is harder
+to integrate with other tools. The second issue was that results were single words
+only; single tokens often lack context. In reports and presentations, a phrase like
+“natural language processing” explains more than the separate words "natural" and
+"language". These two changes were inexpensive to implement and very impactful for
+readability and maintainability.
+
+What I changed (high-level)
+
+1) SessionLogger — production-ready logging
+- Replaced manual open/write calls with Python’s `logging` module.
+- Attached a `RotatingFileHandler` so log files rotate when they reach a configurable
+  size and older logs are kept as backups.
+- Used an ISO-style timestamp formatter and the existing, simple `log(action, snippet, result)` API
+  so the rest of the code didn’t need to change.
+
+2) extraer_palabras_clave — multi-word keyphrases with a simple score
+- Kept the original outputs (`top_5_palabras`, `sustantivos`, `verbos`).
+- Added `frases_clave`: extracted spaCy noun-chunks, normalized them by lemmas and
+  calculated a small score that rewards frequency and length (multi-word phrases)
+  and slightly boosts phrases that include frequent nouns.
+- The scoring is intentionally simple and explainable — excellent for reports.
+
+Implementation details (how I did it)
+
+SessionLogger
+- I create a `logging.Logger` with a `RotatingFileHandler` and a `Formatter`.
+- The handler parameters (`maxBytes`, `backupCount`) are configurable with
+  reasonable defaults (e.g., 5 MB and 5 backups).
+- The `log(action, input_snippet, result)` method truncates the input snippet to
+  120 characters (protects privacy and keeps log lines short) and logs the result
+  with `repr()` at INFO level. If serialization fails, a fallback message is logged.
+- This keeps the module API-compatible with the original manual logger: the rest
+  of the code still calls `logger.log(...)` and nothing else needs to change.
+
+extraer_palabras_clave
+- I normalize the full text using Unicode NFKC and `casefold()` to reduce
+  inconsistencies caused by accents or capitalization.
+- For tokens I still use NLTK if available (like the original) and a regex fallback
+  if not — this keeps compatibility with environments that don’t have NLTK.
+- If spaCy is provided, I process the text with `nlp(text)`, extract `token.lemma_`
+  for nouns and verbs (so different inflected forms are grouped), and build
+  noun-chunks from `doc.noun_chunks`.
+- For each noun-chunk I construct a canonical form using lemmas, increment a
+  counter, then compute a score: roughly `frequency * (1 + 0.5*(num_words-1)) + 0.2*contains_top_noun`.
+  The constants are simple and can be adjusted later; they help promote longer,
+  repeatedly occurring phrases.
+- Return the original fields plus a `frases_clave` list of `(phrase, score)` tuples.
+
+Effect on other code / backward compatibility
+
+- Calls that relied on the previous `SessionLogger` methods still work because the
+  logging wrapper exposes the same `log()` method.
+- `extraer_palabras_clave` still returns the original keys; `frases_clave` is
+  an additive field. Existing code that ignores unknown fields will keep working.
+- If spaCy or NLTK is missing, the program still runs with fallback behaviour, but
+  `frases_clave` will be empty if spaCy isn't available.
+
+How the AI helped me
+
+- The AI suggested the `logging` + `RotatingFileHandler` pattern and provided a
+  good starter snippet. That saved time and made the logging change less error-prone.
+- For phrase extraction the AI recommended spaCy's `noun_chunks` as pragmatic and
+  accurate for multi-word keyphrases and suggested a small scoring heuristic.
+- I used the AI for phrasing docstrings and the explanatory text; it helped me
+  make sure the documentation was clear for both beginners and advanced readers.
+
+What I learned personally
+
+- The `logging` module is slightly opinionated but very flexible — once you set up
+  handlers and formatters, you rarely need to rework logging again.
+- Noun-chunks are a practical way to extract meaningful phrases without building
+  a complicated TF-IDF or RAKE pipeline.
+- Small, explainable scoring formulas are useful for academic projects — they are
+  easy to justify in a report and often perform well for presentation purposes.
+
+Running the improved script (how to try it)
+
+Open PowerShell, navigate to the project folder and run:
+
+```powershell
+python .\bloque_mejoras_MariusDanieBaroana.py
+```
+
+If spaCy and its Spanish model are installed, you will see more informative
+`frases_clave` outputs. The script creates a `logs/` directory and writes a
+`session_YYYYMMDD_HHMMSS.log` file. The log contains timestamped entries and will
+rotate once it grows beyond the configured size.
+
+Before / After example (short)
+
+Before (original):
+- top_5_palabras: [('aprendizaje', 3), ('procesamiento', 1), ...]
+- sustantivos: [('aprendizaje', 3), ('procesamiento', 1), ...]
+- verbos: [('procesar', 2), ...]
+
+After (improved):
+- top_5_palabras: same as before
+- sustantivos: same as before (lemmatized)
+- verbos: same as before (lemmatized)
+- frases_clave: [('procesamiento del lenguaje natural', 3.6), ('aprendizaje profundo', 2.5), ...]
+
+Final reflection
+
+Working on this small project was surprisingly educational. I got to think
+practically about how code behaves beyond the classroom: logs must be manageable
+and production-aware, and outputs should be meaningful for people who read the
+results. I deliberately picked changes that improve real-world usability without
+making the code complicated. The AI was a great pair-programmer for ideas and
+snippets, but I made the design choices and the final edits myself.

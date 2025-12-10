@@ -1,0 +1,31 @@
+================================================================================
+  SESIÓN Extracción de Palabras Clave - 2025-12-10 16:08:27
+================================================================================
+
+[16:08:27] Extracción de Palabras Clave
+--------------------------------------------------------------------------------
+Entrada: 
+    El procesamiento del lenguaje natural es un campo fascinante de la inteligencia artificial.
+   ...
+
+  top_5_palabras:
+    • ('lenguaje', 2)
+    • ('aprendizaje', 2)
+    • ('procesamiento', 1)
+    • ('natural', 1)
+    • ('campo', 1)
+  sustantivos:
+    • ('lenguaje', 2)
+    • ('aprendizaje', 2)
+    • ('procesamiento', 1)
+    • ('campo', 1)
+    • ('inteligencia', 1)
+  verbos:
+    • ('procesar', 1)
+    • ('entender', 1)
+    • ('revolucionado', 1)
+    • ('procesamos', 1)
+    • ('proporcionan', 1)
+
+================================================================================
+
